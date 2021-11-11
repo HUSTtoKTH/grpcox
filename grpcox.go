@@ -25,7 +25,7 @@ func main() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 
 	// start app
-	addr := "0.0.0.0:6969"
+	addr := "localhost:6969"
 	if value, ok := os.LookupEnv("BIND_ADDR"); ok {
 		addr = value
 	}
