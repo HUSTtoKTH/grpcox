@@ -1,14 +1,18 @@
+// Package handler TODO
 package handler
 
 import (
 	"bytes"
 	"context"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strconv"
 	"strings"
 
+	pb "git.code.oa.com/MedicalCommon/goproto/Medipedia"
+	"github.com/golang/protobuf/proto"
 	"github.com/gorilla/mux"
 	"github.com/gusaul/grpcox/core"
 )
@@ -223,15 +227,21 @@ func (h *Handler) invokeFunction(w http.ResponseWriter, r *http.Request) {
 
 	// context metadata
 	metadataHeader := r.Header.Get("Metadata")
-	metadataArr := strings.Split(metadataHeader, ",")
+	metadataArr := strings.Split(metadataHeader, ";")
 
 	// construct array of string with "key: value" form to satisfy grpcurl MetadataFromHeaders
 	var metadata []string
 	var metadataStr string
 	for i, m := range metadataArr {
 		i += 1
-		if isEven := i % 2 == 0; isEven {
-			metadataStr = metadataStr+m
+		if isEven := i%2 == 0; isEven {
+			if strings.Contains(metadataStr, "header-bin") {
+				var h pb.CommonHeader
+				json.Unmarshal([]byte(m), &h)
+				bin, _ := proto.Marshal(&h)
+				m = string(bin)
+			}
+			metadataStr = metadataStr + m
 			metadata = append(metadata, metadataStr)
 			metadataStr = ""
 			continue

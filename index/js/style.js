@@ -137,9 +137,10 @@ $('#select-function').change(function(){
 $('#invoke-func').click(function(){
 
     // use metadata if there is any
-    ctxArr = [];
+    ctxArr = "";
     $(".ctx-metadata-input-field").each(function(index, val){
-        ctxArr.push($(val).text())
+        text = $(val).text()
+        ctxArr += (text.replace(/\s+/g, '')+";")
     });
 
     var func = $('#select-function').val();

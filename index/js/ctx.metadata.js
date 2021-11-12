@@ -16,7 +16,7 @@ const newTr = `
      </tr>`;
 
 // helper variable to contains all of the context metadata input
-let ctxArr = [];
+let ctxArr = "";
 
 // helper variable to contain the usage of metadata
 let ctxUse = false;
