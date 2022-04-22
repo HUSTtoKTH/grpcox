@@ -21,6 +21,8 @@ cloud.google.com/go/storage v1.0.0/go.mod h1:IhtSnM/ZTZV8YYJWCY8RULGVqBDmpoyjwiy
 cloud.google.com/go/storage v1.5.0/go.mod h1:tpKbwo567HUNpVclU5sGELwQWBDZ8gh0ZeosJ0Rtdos=
 cloud.google.com/go/storage v1.6.0/go.mod h1:N7U0C8pVQ/+NIKOBQyamJIeKQKkZ+mxpohlUTyfDhBk=
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
+git.code.oa.com/MedicalCommon/goproto v1.11.8-0.20220413075631-ccdf916dc55c h1:c6vIWe+MbsDeSxM5txgNLcbTGZgz8jQ0GOfCcxvkZd0=
+git.code.oa.com/MedicalCommon/goproto v1.11.8-0.20220413075631-ccdf916dc55c/go.mod h1:OXVDA9bI7Z/xOGPgaSC0L155B1UJjieddF1I3MLbvSc=
 git.code.oa.com/MedicalCommon/goproto v1.11.8 h1:cIyNwN6Wygtzo3NUNFB3nFfN7LA1BctgdpaoGbv+HPk=
 git.code.oa.com/MedicalCommon/goproto v1.11.8/go.mod h1:pFCqirhpXik4CIP6IzBFCJIcCeTAIhgN/f8uqzZmoUE=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
