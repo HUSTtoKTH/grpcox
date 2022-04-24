@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"strconv"
 	"strings"
@@ -238,6 +239,7 @@ func (h *Handler) invokeFunction(w http.ResponseWriter, r *http.Request) {
 			if strings.Contains(metadataStr, "header-bin") {
 				var h pb.CommonHeader
 				json.Unmarshal([]byte(m), &h)
+				log.Println("header-bin:", h)
 				bin, _ := proto.Marshal(&h)
 				m = string(bin)
 			}

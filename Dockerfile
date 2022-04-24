@@ -1,4 +1,4 @@
-FROM alpine:3.14.2 
+FROM csighub.tencentyun.com/medipedia/medi-go:1.2.mini
 
 WORKDIR /project
 
